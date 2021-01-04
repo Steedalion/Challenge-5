@@ -26,17 +26,22 @@ public class TargetX : MonoBehaviour
 
     }
 
-    // When target is clicked, destroy it, update score, and generate explosion
-    private void OnMouseEnter()
-    {
-        if (gameManagerX.isGameActive)
-        {
-            Destroy(gameObject);
-            gameManagerX.UpdateScore(pointValue);
-            Explode();
-        }
+	// OnMouseDown is called when the user has pressed the mouse button while over the GUIElement or Collider.
+	protected void OnMouseDown()
+	{
+		if (gameManagerX.isGameActive)
+		{
+			Destroy(gameObject);
+			gameManagerX.UpdateScore(pointValue);
+			Explode();
+		}
+	}
+    //// When target is clicked, destroy it, update score, and generate explosion
+    //private void OnMouseEnter()
+    //{
+        
                
-    }
+    //}
 
     // Generate a random spawn position based on a random index from 0 to 3
     Vector3 RandomSpawnPosition()
